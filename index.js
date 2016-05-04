@@ -2,6 +2,7 @@ var express = require('express');
 var basicAuth = require('basic-auth-connect');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var config = require('./config.json');
 
 // Creat eour application.
 var app = express();
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // Add Basic authentication to our API.
-app.use(basicAuth('test', 'password123'));
+app.use(basicAuth(config.username, config.password));
 
 // Handle the requests.
 app.put('/*', function(req, res, next) {
@@ -33,5 +34,5 @@ app.delete('/*', function(req, res, next) {
   next();
 });
 
-console.log('Listening to port 3001');
-app.listen(3001);
+console.log('Listening to port ' + config.port);
+app.listen(config.port);
