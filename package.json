@@ -1,6 +1,6 @@
 {
   "name": "formio-webhook-receiver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This shows how to implement a form.io webhook receiver.",
   "main": "index.js",
   "scripts": {
