@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var config = require('./config.json');
 
-// Creat eour application.
+// Create our application.
 var app = express();
 
 // Add Middleware necessary for REST API's
