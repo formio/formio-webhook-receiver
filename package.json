@@ -1,18 +1,30 @@
 {
   "name": "formio-webhook-receiver",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "This shows how to implement a form.io webhook receiver.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:basic": "node basic",
+    "start:validation": "node validation",
+    "deploy:basic": "claudia create --name formio-webhook-receiver-basic --handler basic/lambda.handler --config basic.claudia.json --deploy-proxy-api --region us-west-2",
+    "deploy:validation": "claudia create --name formio-webhook-receiver-validation --handler validation/lambda.handler --config validation.claudia.json --deploy-proxy-api --region us-west-2",
+    "update:basic": "claudia update --config basic.claudia.json",
+    "update:validation": "claudia update --config validation.claudia.json"
   },
   "author": "Travis Tidwell <travis@form.io>",
   "license": "MIT",
   "dependencies": {
-    "basic-auth": "^1.0.1",
-    "basic-auth-connect": "^1.0.0",
-    "body-parser": "^1.12.4",
-    "express": "^4.12.4",
-    "method-override": "^2.3.3"
+    "aws-serverless-express": "^3.3.5",
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.6.1",
+    "eslint-config-formio": "^1.1.4",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "claudia": "^5.1.2"
   }
 }

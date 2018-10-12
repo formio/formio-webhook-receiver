@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "arn:aws:iam::551091399009:role/service-role/LambdaRole",
+    "name": "formio-webhook-receiver-validation",
+    "region": "us-west-2",
+    "sharedRole": true
+  },
+  "api": {
+    "id": "mxhee5s77j"
+  }
+}
