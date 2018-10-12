@@ -13,7 +13,13 @@ npm install
 You can then run the example server by typing the following
 
 ```
-node index
+npm run start:basic
+```
+
+or
+
+```
+npm run start:validation
 ```
 
 Using with NGROK
