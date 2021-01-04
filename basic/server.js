@@ -14,6 +14,10 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
+app.use((req, res, next) => {
+  res.setHeader('Content-Type', req.headers['content-type']);
+  next();
+});
 
 // Add Basic authentication to our API.
 app.use((req, res, next) => {
@@ -43,6 +47,11 @@ app.delete('/*', (req, res, next) => {
   // This shows all the parameters needed for the deletion.
   console.log(req.query); // eslint-disable-line no-console
   next();
+});
+
+// Add basic response
+app.use((req, res) => {
+  res.send({});
 });
 
 module.exports = app;
