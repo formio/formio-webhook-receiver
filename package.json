@@ -1,5 +1,5 @@
 {
-  "name": "formio-webhook-receiver",
+  "name": "@formio/formio-webhook-receiver",
   "version": "1.0.0",
   "description": "This shows how to implement a form.io webhook receiver.",
   "main": "index.js",
